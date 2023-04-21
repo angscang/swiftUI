@@ -1,0 +1,43 @@
+import SwiftUI
+
+struct ContentView: View {
+    @State var counter = 0
+    @State var message = ""
+    
+    var body: some View {
+        VStack {
+            Text("\(counter) cookies eaten 🍪")
+                .padding()
+                .font(.system(size:25))
+
+            /** increase button **/ 
+            Button {
+                print("Bye bye cookie 🍪!!")
+                counter += 1
+                
+                if counter >= 40 {
+                    message = "🪦"
+                        
+                } else if counter >= 30 {
+                    message = "Oh no you're not listening right??"
+                } else {
+                    message = "Don't eat too many cookies 🍪"
+                }
+            } label: {
+                Text("OM NOM NOM")
+                /** modifiers **/    
+                    .padding()
+                    .background(.blue)
+                    .foregroundColor(.white)
+            }
+
+
+            
+            if counter >= 20 {
+                Text(message)
+                    .padding()
+                    .font(.system(size:40))
+            }
+        }
+    }
+}
