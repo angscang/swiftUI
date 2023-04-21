@@ -1,0 +1,44 @@
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Text("About Me 🏂").font(.largeTitle)
+                .padding(.all)
+            Image("Tkrobot").resizable().scaledToFit()
+             .mask(Circle())
+             Text("**Swee Chye**🎢")  .font(.title)
+             /**   .padding(.all) **/
+                .foregroundColor(.indigo)
+               .padding(.all)
+            
+                .background(.yellow)
+                
+            
+            HStack {
+                Image(systemName: "rectangle.inset.filled.and.person.filled")
+                    .foregroundColor(.blue)
+                //Image(systemName: "person")
+                //Text("Apple Professional Learning Provider 🏌️‍♂️ ")
+                Text("*Apple Professional Learning Consultant*🏌️‍♂️")
+                .foregroundColor(.blue)
+            }
+            
+        }
+        Text("My Site")
+            .padding()
+            .foregroundColor(.mint)
+        Image(systemName: "globe")
+        
+        Text("**[Go to website](https://www.tk.sg)**")
+            .padding()
+            .background(.secondary)
+            .cornerRadius(15)
+            .shadow(radius: 10)
+    
+        .padding()
+        
+        
+    }
+}
+
