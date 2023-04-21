@@ -5,19 +5,22 @@ struct ContentView: View {
     
   var body: some View {
 
-   /** Depth Stack: use color to see it  .cyan, .blue, .red   **/
+   /** Depth Stack: use color to see it Color  .cyan, .blue, .red   **/
    ZStack {
     Color.mint
     
     /** Horizontal Stack  **/
-    /** enum  .top, .center, .bottom **/
+    /** enum  alignment: .top, .center, .bottom, spacing: 10 **/
     HStack(alignment: .top) {
         /** View  "MyImage" **/
         Image(systemName : "globe")
           /** modifiers  **/
-          .resizable()
-          .scaledToFit()
-          /** modifiers Sizing .frame(width: 100, height: 100  **/
+          .imageScale(.large)
+          .foregroundColor(.accentColor)        
+     //     .resizable()
+     //     .scaledToFit()
+          
+          /** modifiers Sizing .frame(width: 100, height: 100), maxWidth: .infinity, maxHeight: .infinity  **/
           .frame(width: 100)
             /** modifiers Masking and cornerRadius .mask(Image(systemName: "star.fill").font(.system(size:250))), .cornerRadius(16) **/
           .mask(Circle())
@@ -38,7 +41,7 @@ struct ContentView: View {
         
         /** View  "Your Class/School" **/
         Text("Another Text")
-        /** modifiers  **/
+        /** modifiers Colors & Font Size **/
         .foregroundColor(.red)
         .font(.system(size: 20))
         
