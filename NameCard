@@ -1,0 +1,29 @@
+import SwiftUI 
+
+struct ContentView: View {
+    
+  var body: some View {
+
+   ZStack {
+    Color.mint
+    HStack(alignment: .top) {
+        /** View  **/
+        Image("MyImage")
+          /** enum  **/
+          .resizable()
+          .scaledToFit()
+      VStack {
+        /** View  **/
+        Text("ASC")
+          .bold()
+          .italic()
+          .font(.system(size: 40))
+        Text("Swift Instructor")
+        .foregroundColor(.red)
+        }
+    }  
+   }
+  }
+    
+}
+
