@@ -1,26 +1,60 @@
 import SwiftUI 
 
+/** struct: type with properties and methods  **/
 struct ContentView: View {
     
   var body: some View {
 
+   /** Depth Stack: use color to see it  .cyan, .blue, .red   **/
    ZStack {
     Color.mint
+    
+    /** Horizontal Stack  **/
+    /** enum  .top, .center, .bottom **/
     HStack(alignment: .top) {
-        /** View  **/
-        Image("MyImage")
-          /** enum  **/
+        /** View  "MyImage" **/
+        Image(systemName : "globe")
+          /** modifiers  **/
           .resizable()
           .scaledToFit()
+          /** modifiers Sizing .frame(width: 100, height: 100  **/
+          .frame(width: 100)
+            /** modifiers Masking and cornerRadius .mask(Image(systemName: "star.fill").font(.system(size:250))), .cornerRadius(16) **/
+          .mask(Circle())
+          
+      /** Vertical Stack  **/    
       VStack {
-        /** View  **/
-        Text("ASC")
+        /** View  "Your Name" **/
+        Text("Hello World")
+          /** modifiers .bold(); .italic(); .font(.system(size: 100))  **/
           .bold()
           .italic()
           .font(.system(size: 40))
-        Text("Swift Instructor")
+          /** modifiers Colors & Padding  **/
+          .padding()
+          .foregroundColor(.green)
+          .background(.blue)
+
+        
+        /** View  "Your Class/School" **/
+        Text("Another Text")
+        /** modifiers  **/
         .foregroundColor(.red)
+        .font(.system(size: 20))
+        
+        /** Links and SF Symbols Image(systemName: "sunrise.fill").renderingMode(.original) **/
+        HStack {
+          Link(destination: URL(string: "mailto:hello@tk.sg")!) {
+            Image(systemName: "mail")
+          }
+          Link(destination: URL(string: "https://tk.sg")!) {
+            Image(systemName: "pc")
+          }
         }
+        .font(.system(size: 20))
+        .foregroundColor(.yellow)
+        .padding(.top)        
+       }
     }  
    }
   }
